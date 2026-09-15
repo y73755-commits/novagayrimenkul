@@ -46,6 +46,16 @@ ul{margin:0;padding:0;}
 .section{padding:88px 0;}
 .section--tight{padding:56px 0;}
 .section--dark{background:var(--black);color:var(--off);}
+.section--dark.section--tight{
+  position:relative;
+  background-color:var(--black);
+  background-image:
+    linear-gradient(180deg, rgba(10,10,11,.78) 0%, rgba(10,10,11,.82) 100%),
+    url('https://images.unsplash.com/photo-1617761141732-d481912af1a9?q=70&w=1800&auto=format&fit=crop');
+  background-size:cover,cover;
+  background-position:center,center;
+  background-repeat:no-repeat,no-repeat;
+}
 .section--dark h2, .section--dark h3, .section--dark h4{color:var(--white);}
 .section--dark p{color:#b9b7b2;}
 .section--anthracite{background:var(--anthracite);color:var(--off);}
@@ -116,8 +126,15 @@ ul{margin:0;padding:0;}
 
 /* Hero */
 .hero{
-  position:relative;overflow:hidden;background:var(--black);color:var(--white);
+  position:relative;overflow:hidden;color:var(--white);
   padding:100px 0 70px;
+  background-color:var(--black);
+  background-image:
+    linear-gradient(180deg, rgba(10,10,11,.55) 0%, rgba(10,10,11,.72) 55%, rgba(10,10,11,.94) 100%),
+    url('https://images.unsplash.com/photo-1692374226026-5a482c5d8066?q=75&w=2000&auto=format&fit=crop');
+  background-size:cover,cover;
+  background-position:center,center;
+  background-repeat:no-repeat,no-repeat;
 }
 .hero-skyline{position:absolute;inset:auto 0 0 0;height:46%;opacity:.35;pointer-events:none;}
 .hero-glow{position:absolute;top:-200px;right:-160px;width:560px;height:560px;background:radial-gradient(circle, rgba(201,162,76,.35), transparent 70%);pointer-events:none;}
@@ -203,7 +220,13 @@ ul{margin:0;padding:0;}
 
 /* Panel / promo */
 .panel{
-  background:linear-gradient(135deg,#141416,#1c1c1e 55%,#141416);
+  background-color:#141416;
+  background-image:
+    linear-gradient(135deg, rgba(20,20,22,.9) 0%, rgba(28,28,30,.82) 55%, rgba(20,20,22,.92) 100%),
+    url('https://images.unsplash.com/photo-1706808849780-7a04fbac83ef?q=70&w=1800&auto=format&fit=crop');
+  background-size:cover,cover;
+  background-position:center,center;
+  background-repeat:no-repeat,no-repeat;
   border:1px solid #2c2c30;border-radius:20px;padding:52px;color:var(--off);
   position:relative;overflow:hidden;
 }
