@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://y73755-commits.github.io/novagayrimenkul/sitemap.xml
