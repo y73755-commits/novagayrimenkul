@@ -60,6 +60,7 @@ ul{margin:0;padding:0;}
 .section--dark p{color:#b9b7b2;}
 .section--anthracite{background:var(--anthracite);color:var(--off);}
 .section--anthracite h2, .section--anthracite h3{color:var(--white);}
+.section--dark .card h3, .section--anthracite .card h3{color:var(--black);}
 .eyebrow{
   display:inline-flex;align-items:center;gap:8px;
   font-family:var(--head);font-size:12px;font-weight:700;letter-spacing:.18em;

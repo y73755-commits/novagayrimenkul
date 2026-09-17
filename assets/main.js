@@ -76,14 +76,11 @@
       var data = new FormData(form);
       var lines = [];
       data.forEach(function(v,k){ if(v) lines.push(k + ': ' + v); });
-      var body = encodeURIComponent(lines.join('
-'));
+      var body = encodeURIComponent(lines.join('\n'));
       var subject = encodeURIComponent('Nova Gayrimenkul – Web Sitesi Talebi');
       var statusBox = form.querySelector('.form-status');
       var mailto = 'mailto:nova_gayrimenkul@hotmail.com?subject=' + subject + '&body=' + body;
-      var waText = encodeURIComponent('Merhaba, web sitesi üzerinden iletişim formunu doldurdum:
-' + lines.join('
-'));
+      var waText = encodeURIComponent('Merhaba, web sitesi üzerinden iletişim formunu doldurdum:\n' + lines.join('\n'));
       var waLink = 'https://wa.me/905017017908?text=' + waText;
       if(statusBox){
         statusBox.innerHTML = 'Formunuz e-posta istemcinizde hazırlandı. Açılan pencereden gönderebilir, ya da doğrudan ' +
