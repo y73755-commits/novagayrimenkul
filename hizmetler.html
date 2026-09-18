@@ -44,10 +44,24 @@
   "areaServed": ["Şişli", "Kağıthane", "Beşiktaş", "Etiler", "Nişantaşı", "Sarıyer", "Göktürk", "Kemerburgaz", "Alibeyköy", "Pendik", "Sultanbeyli", "Kadıköy"]
 }
 </script>
-<!-- Analytics/Ads placeholder: no gerçek ölçüm kimliği eklenmedi.
-     Gerçek bir Google Analytics 4 / Google Tag Manager / Google Ads / Meta Pixel
-     kimliği sağlandığında bu bloğa entegre edilecektir. -->
-<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script> -->
+<!-- Google Analytics 4 / Google Ads dönüşüm takibi.
+     GA_MEASUREMENT_ID "G-XXXXXXXXXX" olarak kaldığı sürece hiçbir istek
+     gönderilmez; gerçek Ölçüm Kimliği build.py'de tanımlandığında aktif olur. -->
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+window.NOVA_GA_ID = "G-XXXXXXXXXX";
+if(window.NOVA_GA_ID && window.NOVA_GA_ID.indexOf("XXXX") === -1){
+  (function(){
+    var s = document.createElement("script");
+    s.async = true;
+    s.src = "https://www.googletagmanager.com/gtag/js?id=" + window.NOVA_GA_ID;
+    document.head.appendChild(s);
+  })();
+  gtag("js", new Date());
+  gtag("config", window.NOVA_GA_ID);
+}
+</script>
 
 
 </head>
@@ -242,6 +256,6 @@
     </div>
   </div>
 </div>
-<script src="assets/main.js"></script>
+<script src="assets/main.js?v=2"></script>
 </body>
 </html>
