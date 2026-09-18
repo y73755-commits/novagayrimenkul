@@ -87,10 +87,27 @@
           '<a href="'+waLink+'" target="_blank" rel="noopener">WhatsApp üzerinden</a> bize ulaşabilirsiniz.';
         statusBox.style.display = 'block';
       }
+      if(typeof window.gtag === 'function'){
+        window.gtag('event', 'form_submit', {event_category: 'lead', event_label: location.pathname});
+      }
       window.location.href = mailto;
     });
   });
 
   /* Simple current year */
   document.querySelectorAll('.cur-year').forEach(function(el){ el.textContent = new Date().getFullYear(); });
+
+  /* GA4 / Google Ads dönüşüm takibi: WhatsApp ve telefon tıklamaları.
+     window.gtag tanımlı değilse (GA henüz kurulmadıysa) sessizce hiçbir şey yapmaz. */
+  document.addEventListener('click', function(ev){
+    var a = ev.target && ev.target.closest ? ev.target.closest('a') : null;
+    if(!a) return;
+    var href = a.getAttribute('href') || '';
+    if(typeof window.gtag !== 'function') return;
+    if(/wa\.me|whatsapp/i.test(href)){
+      window.gtag('event', 'whatsapp_click', {event_category: 'engagement', event_label: location.pathname});
+    } else if(href.indexOf('tel:') === 0){
+      window.gtag('event', 'phone_click', {event_category: 'engagement', event_label: location.pathname});
+    }
+  });
 })();
